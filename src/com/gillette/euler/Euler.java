@@ -98,4 +98,30 @@ public class Euler {
 		
 		return n;
 	}
+	
+	/*
+	 * sumSquareDifference(n)
+	 * 
+	 * Problem 6: What is the difference between the sum of the squares (each num squared) and the square of the sum (all nums summed and squared)
+	 * to first n numbers?
+	 * 
+	 * @param {Integer} -> The number to increment to.
+	 * @return {Integer} -> The difference
+	 */
+	public long sumSquareDifference(long n) {
+		long sumOfSquares = 0;
+		long squareOfSum = 0;
+		
+		for (int i = 1; i <= n; i++) {
+			sumOfSquares += i*i;
+		}
+		
+		for (int i = 1; i <= n; i++) {
+			squareOfSum += i;
+		}
+		
+		squareOfSum *= squareOfSum;
+		
+		return sumOfSquares - squareOfSum;
+	}
 }
